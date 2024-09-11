@@ -14,11 +14,17 @@ import java.util.List;
  */
 public class InputView {
     private static final String GET_CAR_NAMES_STRING=  "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)";
+    private static final String GET_NUMBER_OF_MOVE = "시도할 회수는 몇회인가요?";
     ConsoleWriter consoleWriter = new ConsoleWriter();
     ConsoleReader consoleReader = new ConsoleReader();
 
     public Cars getCars(){
         consoleWriter.printMessage(GET_CAR_NAMES_STRING);
         return new Cars(InputUtil.validateName(consoleReader.getLine()));
+    }
+
+    public int getNumberOfMoves(){
+        consoleWriter.printMessage(GET_NUMBER_OF_MOVE);
+        return InputUtil.validateNumberOfMoves(consoleReader.getLine());
     }
 }

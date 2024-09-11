@@ -11,5 +11,6 @@ public class RacingGameController {
     }
     public void run(){
         Cars cars =  inputView.getCars();
+
     }
 }
